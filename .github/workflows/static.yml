@@ -1,10 +1,10 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+# .github/workflows/static.yml
+name: Deploy Static App to GitHub Pages # Changed name slightly for clarity
 
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["main"] # Or your default branch, e.g., master
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,22 +22,43 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  build: # Renamed job to 'build' as it now includes the build process
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Specify your project's Node.js version (e.g., 18, 20)
+                             # Check your project's package.json engines field or your local version
+          cache: 'npm'       # Or 'yarn' if you use yarn
+
+      - name: Install dependencies
+        run: npm install     # Or yarn install, or pnpm install
+
+      - name: Build project
+        run: npm run build   # Or your specific build command (e.g., yarn build, vite build)
+                             # This command MUST output to a './dist' directory.
+                             # If your build output is different (e.g. './build'),
+                             # change the 'path' in the 'Upload artifact' step below.
+
+      - name: Upload artifact for deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload contents of the ./dist directory (or your build output directory)
+          path: ./dist
+
   deploy:
+    needs: build # This job depends on the 'build' job completing successfully
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        # No need for actions/configure-pages or actions/checkout here,
+        # as actions/deploy-pages handles fetching the artifact.
