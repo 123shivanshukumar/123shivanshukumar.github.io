@@ -10,6 +10,7 @@ import TechnicalBlog from "./pages/TechnicalBlog";
 import Resources from "./pages/Resources";
 import NotFound from "./pages/NotFound";
 import SingleBlogPost from "./pages/SingleBlogPost"; // Import the new component
+import SingleBlogPostTechnical from "./pages/SingleBlogPostTechnical"; // Import the new component
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/personal" element={<PersonalBlog />} />
           <Route path="/blog/personal/:id" element={<SingleBlogPost />} /> {/* Add this route */}
+          <Route path="/blog/technical/:id" element={<SingleBlogPostTechnical />} /> {/* Add this route */}
           <Route path="/blog/technical" element={<TechnicalBlog />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="*" element={<NotFound />} />

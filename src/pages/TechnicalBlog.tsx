@@ -34,19 +34,13 @@ const TechnicalBlog = () => {
   useEffect(() => {
     const loadPostContents = async () => {
       try {
-        const postsWithContent = await Promise.all(
-          technicalPostsMetadata.map(async (postMetadata) => {
-            try {
-              const markdownModule = await import(`/mnt/2ABA9795BA975BDF/SK/KnowledgeBase/website_blog/${postMetadata.id}.md?raw`);
-              const content = marked(markdownModule.default);
-              return { ...postMetadata, content };
-            } catch (error) {
-              console.error(`Error loading content for post ${postMetadata.id}:`, error);
-              return { ...postMetadata, content: '' };
-            }
-          })
-        );
-        setPosts(postsWithContent);
+        // Try to load Markdown files directly from the file system
+        const loadedPosts = technicalPostsMetadata.map(post => ({
+          ...post,
+          content: '' // We don't need content for the list view
+        }));
+        
+        setPosts(loadedPosts);
       } catch (error) {
         console.error("Error loading blog post contents:", error);
         setPosts([]);
@@ -77,7 +71,7 @@ const TechnicalBlog = () => {
           </Link>
           <h1 className="mt-4">Technical Blog</h1>
           <p className="text-xl text-muted-foreground">
-		Some cool stuff I learnt on the way.
+            Thoughts, experiences, and Technical reflections.
           </p>
         </div>
 
@@ -101,7 +95,7 @@ const TechnicalBlog = () => {
                 </div>
                 <h2 className="blog-title">
                   <span className="blog-title-prefix">##</span>
-                  <Link to={`/blog/personal/${post.id}`} className="blog-title-text hover:underline">
+                  <Link to={`/blog/technical/${post.id}`} className="blog-title-text hover:underline">
                     {post.title}
                   </Link>
                 </h2>

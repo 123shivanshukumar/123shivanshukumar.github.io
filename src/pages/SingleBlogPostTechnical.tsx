@@ -1,4 +1,4 @@
-// src/pages/SingleBlogPost.tsx
+// src/pages/SingleBlogPostTechnical.tsx
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
@@ -27,11 +27,11 @@ const SingleBlogPostTechnical = () => {
       try {
         // Assuming your 'id' in the URL matches the 'id' in your metadata
         const postMetadata = technicalPostsMetadata.find(p => p.id === id);
-        console.log("SingleBlogPost: postMetadata after find:", postMetadata); // Add this line
+        console.log("SingleBlogPostTechnical: postMetadata after find:", postMetadata); // Add this line
 
         if (postMetadata) {
           try {
-            const markdownModule = await import(`/mnt/2ABA9795BA975BDF/SK/KnowledgeBase/website_blog/${postMetadata.id}.md?raw`);
+            const markdownModule = await import(`../content/blog/${postMetadata.id}.md?raw`);
             const content = marked(markdownModule.default);
             setPost({ ...postMetadata, content });
           } catch (mdError) {
@@ -93,4 +93,4 @@ const SingleBlogPostTechnical = () => {
   );
 };
 
-export default SingleBlogPost;
+export default SingleBlogPostTechnical;
