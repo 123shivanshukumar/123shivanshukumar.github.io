@@ -1,82 +1,116 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import { Clock, ExternalLink } from 'lucide-react';
+import { marked } from 'marked';
 
-// Mock blog post data
-const technicalPosts = [
-  {
-    id: 1,
-    title: "Understanding React Hooks",
-    excerpt: "A deep dive into the most useful React hooks and when to use them.",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    date: "2023-04-25",
-    readTime: "3 minute read",
-    category: "Web Development"
-  },
-  {
-    id: 2,
-    title: "The Power of CSS Grid",
-    excerpt: "How to leverage CSS Grid for complex layouts with minimal code.",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    date: "2023-02-12",
-    readTime: "2 minute read",
-    category: "CSS"
-  },
-  {
-    id: 3,
-    title: "Introduction to TypeScript",
-    excerpt: "Getting started with TypeScript and its benefits over plain JavaScript.",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    date: "2023-03-05",
-    readTime: "3 minute read",
-    category: "TypeScript"
-  },
-  {
-    id: 4,
-    title: "Optimizing React Performance",
-    excerpt: "Techniques and best practices to make your React applications faster.",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    date: "2023-04-02",
-    readTime: "4 minute read",
-    category: "React"
-  }
-];
+// Mock blog post metadata (same as before)
+export const technicalPostsMetadata = [{
+    id: "Hyperplonk",
+    title: "Hyperplonk IOP - avoiding FFTs",
+    excerpt: "In this blog I will discuss about an amazing improvement over the Plonk IOP, for proving circuits",
+    date: "2024-05-16",
+    readTime: "5 minute read",
+    category: "Blockchains and Zero Knowledge Proofs"
+  }];
+
+interface PostMetadata {
+  id: string;
+  title?: string;
+  excerpt?: string;
+  date?: string;
+  readTime?: string;
+  category?: string;
+}
+
+interface BlogPost extends PostMetadata {
+  content?: string;
+}
 
 const TechnicalBlog = () => {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadPostContents = async () => {
+      try {
+        const postsWithContent = await Promise.all(
+          technicalPostsMetadata.map(async (postMetadata) => {
+            try {
+              const markdownModule = await import(`/mnt/2ABA9795BA975BDF/SK/KnowledgeBase/website_blog/${postMetadata.id}.md?raw`);
+              const content = marked(markdownModule.default);
+              return { ...postMetadata, content };
+            } catch (error) {
+              console.error(`Error loading content for post ${postMetadata.id}:`, error);
+              return { ...postMetadata, content: '' };
+            }
+          })
+        );
+        setPosts(postsWithContent);
+      } catch (error) {
+        console.error("Error loading blog post contents:", error);
+        setPosts([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadPostContents();
+  }, []);
+
+  if (loading) {
+    return (
+      <MainLayout>
+        <div className="page-container">
+          <p>Loading blog posts...</p>
+        </div>
+      </MainLayout>
+    );
+  }
+
   return (
     <MainLayout>
       <div className="page-container">
         <div className="mb-10">
-          <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link to="/blog/technical" className="text-sm text-muted-foreground hover:text-foreground">
             ← Back to all blogs
           </Link>
           <h1 className="mt-4">Technical Blog</h1>
           <p className="text-xl text-muted-foreground">
-            Deep dives into code, development concepts, and technical solutions.
+		Some cool stuff I learnt on the way.
           </p>
         </div>
-        
-        <div className="space-y-12">
-          {technicalPosts.map(post => (
-            <article key={post.id} id={`${post.id}`} className="border-b border-terminal-gray/20 pb-10">
-              <div className="blog-meta">
-                <span className="flex items-center"><Clock size={14} className="mr-1" /> {post.readTime}</span>
-                <span className="mx-2">•</span>
-                <span>Published: {post.date}</span>
-              </div>
-              <h2 className="blog-title">
-                <span className="blog-title-prefix">##</span> 
-                <span className="blog-title-text">{post.title}</span>
-              </h2>
-              <p className="text-lg mb-4">{post.excerpt}</p>
-              <div className="prose max-w-none">
-                <p>{post.content}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+
+        {posts.length === 0 ? (
+          <div className="text-center py-12">
+            <p>No blog posts found. Add some markdown files to your content directory!</p>
+          </div>
+        ) : (
+          <div className="space-y-12">
+            {posts.map(post => (
+              <article key={post.id} id={`${post.id}`} className="border-b border-terminal-gray/20 pb-10">
+                <div className="blog-meta">
+                  {post.readTime && <span className="flex items-center"><Clock size={14} className="mr-1" /> {post.readTime}</span>}
+                  {post.date && <span>{post.readTime && <span className="mx-2">•</span>} Published: {post.date}</span>}
+                  {post.category && (
+                    <>
+                      <span className="mx-2">•</span>
+                      <span>Category: {post.category}</span>
+                    </>
+                  )}
+                </div>
+                <h2 className="blog-title">
+                  <span className="blog-title-prefix">##</span>
+                  <Link to={`/blog/personal/${post.id}`} className="blog-title-text hover:underline">
+                    {post.title}
+                  </Link>
+                </h2>
+                {post.excerpt && <p className="text-lg mb-4">{post.excerpt}</p>}
+                {/* Removed the conditional rendering for full content and the "Read More" button */}
+              </article>
+            ))}
+          </div>
+        )}
       </div>
     </MainLayout>
   );
