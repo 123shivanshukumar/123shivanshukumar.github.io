@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    {% if section.extra.section_path -%}
+        {% set section = get_section(path=section.extra.section_path) %}
+    {% endif -%}
+    
+    {{ post_macros::page_header(title=section.title) }}
+    
+    {%- if paginator %}
+        {%- set show_pages = paginator.pages -%}
+    {% else %}
+        {%- set show_pages = section.pages -%}
+    {% endif -%}
+    
+    <div class="linear-content">
+        {% for page in show_pages %}
+            <article class="content-item">
+                <h2 class="item-title">
+                    <a href="{{ page.permalink }}">{{ page.title }}</a>
+                </h2>
+                
+                {% if page.date %}
+                    <div class="item-date">{{ page.date | date(format="%B %d, %Y") }}</div>
+                {% endif %}
+                
+                {% if page.extra.image %}
+                    <div class="item-image">
+                        <img src="{{ page.extra.image }}" alt="{{ page.title }}">
+                    </div>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </div>
+    
+    {% if paginator %}
+        <div class="pagination">
+            {% if paginator.previous %}
+                <a href="{{ paginator.previous }}" class="prev-page">← Prev</a>
+            {% endif %}
+            
+            {% if paginator.next %}
+                <a href="{{ paginator.next }}" class="next-page">Next →</a>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock main_content %}
+
