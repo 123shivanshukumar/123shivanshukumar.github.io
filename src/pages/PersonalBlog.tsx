@@ -7,35 +7,11 @@ import { marked } from 'marked';
 // Mock blog post metadata (same as before)
 export const personalPostsMetadata = [{
     id: "1",
-    title: "Reflections on Mindfulness",
+    title: "Rebooting",
     excerpt: "Exploring the impact of daily meditation and mindfulness practices.",
     date: "2023-05-10",
     readTime: "4 minute read",
     category: "Personal Growth"
-  },
-  {
-    id: "2",
-    title: "My Journey Through Southeast Asia",
-    excerpt: "Chronicles and insights from six months of travel across Thailand, Vietnam, and Indonesia.",
-    date: "2023-01-03",
-    readTime: "5 minute read",
-    category: "Travel"
-  },
-  {
-    id: "3",
-    title: "The Art of Slow Living",
-    excerpt: "Finding peace and fulfillment by embracing a slower pace of life.",
-    date: "2023-03-15",
-    readTime: "3 minute read",
-    category: "Lifestyle"
-  },
-  {
-    id: "4",
-    title: "Books That Changed My Perspective",
-    excerpt: "A collection of life-altering books and the lessons they taught me.",
-    date: "2023-04-07",
-    readTime: "4 minute read",
-    category: "Books"
   }];
 
 interface PostMetadata {
