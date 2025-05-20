@@ -1,6 +1,7 @@
 +++
-title = "Logic Design and Verilog"
+title = "Some miscellaneous links"
 weight = 6
 +++
 
-A bunch of links to follow for those interested in crypto!
+- A huge [collection](https://www.cse.iitd.ac.in/~srsarangi/otm.html) of free textbooks maintained by Prof. Smruti Sarangi
+
