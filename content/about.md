@@ -13,8 +13,8 @@ This site contains my personal views on a variety of things, some technical blog
 
 Some cool people I met on the way :)) -- I soon aspire to make a list of interesting people similar to what [Patrick Collision](https://patrickcollison.com/) and [Alexey Guzey](https://guzey.com/) have made..
 - [Prof. Rupesh Nasre](https://www.cse.iitm.ac.in/~rupesh/) - An amazing professor with a great sense of humour and excellent teaching skills. Had the fortune to learn Object Oriented Programming in C++ from him.
-- [Prof. Jayalal Sarma](https://www.cse.iitm.ac.in/~jayalal))- One of the most supporting and down to earth Professors, ever ready to help students. Studied Algorithm design and (some) complexity theory under him.
-- [Prof. Manikandan Narayanan](https://maninarayanan.com/index.html) - An extraordinarily genius and devoted faculty. He took the Programming and Data structures class for us. </li>
-- [Prof. Gopalakrishnan Srinivasan](https://rbcdsai.iitm.ac.in/people/gopalakrishnan_srinivasan/) - A cracked researcher, full of enthusiasm. I hated systems until I attended his classes ;) He got me interested into architecture!
-- [Aryan Jain](http://hotrod46.vercel.app/) - The most determined, courageous and focussed person I ever met. He was one of my best friends at IITM, we were roommates for about an year.
-- [Md. Isfarul Haque](https://innocentzero.is-a.dev/) - A deeply technical, genius and supportive senior. Helped me through tons of things (In fact this website was built using [something](https://www.getzola.org/) he suggested)
+- [Prof. Jayalal Sarma] ("https://www.cse.iitm.ac.in/~jayalal/)- One of the most supporting and down to earth Professors, ever ready to help students. Studied Algorithm design and complexity theory under him.
+- [Prof. Manikandan Narayanan](https://maninarayanan.com/index.html) - An extraor genius and devoted faculty. He took the Programming and Data structures class for us. </li>
+- [Prof. Gopalakrishnan Srinivasan](https://rbcdsai.iitm.ac.in/people/gopalakrishnan_srinivasan/) - A cracked researcher full of enthusiasm. I hated systems until I attened his classes ;) He got me interested into architecture!
+- [Aryan Jain](http://hotrod46.vercel.app/) - The most determined, courageous and focussed person I ever met. He is one of my best friends at IITM, we were roommates for about an year.
+- [Md. Isfarul Haque](https://innocentzero.is-a.dev/) - A deeply technical, genius and supportive senior. Helped me through tons of things (In fact was built using something he suggested)
