@@ -1,5 +1,5 @@
 +++
-title = "Crypto"
+title = "Theory of computation"
 weight = 9
 +++
 

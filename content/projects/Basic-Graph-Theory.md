@@ -1,5 +1,5 @@
 +++
-title = "Crypto"
+title = "Graph Theory"
 weight = 2
 +++
 

@@ -1,5 +1,5 @@
 +++
-title = "Crypto"
+title = "Computer Architecture"
 weight = 1
 +++
 

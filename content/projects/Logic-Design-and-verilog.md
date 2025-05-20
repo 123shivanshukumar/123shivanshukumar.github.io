@@ -1,5 +1,5 @@
 +++
-title = "Crypto"
+title = "Logic Design and Verilog"
 weight = 6
 +++
 
