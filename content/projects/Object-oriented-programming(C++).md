@@ -3,4 +3,4 @@ title = "Object Oriented Programming(C++)"
 weight = 7
 +++
 
-A bunch of links to follow for those interested in crypto!
+- Slides, labs and videos for [CS2800](https://www.cse.iitm.ac.in/~rupesh/teaching/ooaia/jan25/) course by Prof. Rupesh Nasre, IITM.
