@@ -4,9 +4,9 @@ weight = 7
 +++
 
 Object Oriented programming is one of the key aspects in the toolbox of someone who wants to pursue software. 
-Prof. Rupesh has an excellent set of videos from the CS2810 course offered at IITM. [Playlist](https://www.youtube.com/playlist?list=PL54i8TI-dREZcHcez3VxBUupYGfZ-SxAh)
+Set of videos from the CS2810 course offered at IITM. [Playlist](https://www.youtube.com/playlist?list=PL54i8TI-dREZcHcez3VxBUupYGfZ-SxAh)
 
-- His slides (updated) and labs are available [here](https://www.cse.iitm.ac.in/~rupesh/teaching/ooaia/jan25/)
+- Prof. Rupesh's slides (updated) and labs are available [here](https://www.cse.iitm.ac.in/~rupesh/teaching/ooaia/jan25/)
 - [Solutions](https://github.com/123shivanshukumar/Resources/tree/main/CS2810-2025-solutions) to the above labs (Thanks to our TAs! -- these are not mine)
 
 # Possible workflow
