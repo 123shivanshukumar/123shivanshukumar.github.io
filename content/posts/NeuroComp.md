@@ -1,7 +1,9 @@
 +++
 title = "Introduction to Neuromorphic Computing"
 date = "2024-05-21"
-[taxonomies] tags=["systems"]
+
+[taxonomies]
+tags=["systems"]
 +++
 
 # Background
