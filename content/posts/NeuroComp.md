@@ -18,6 +18,7 @@ Introduction to SNNs
 
 # See also
 
+<<<<<<< HEAD
 
 -- hardware for the LLMS part -- go into the algorithmic side -- what exaclty he has done 
 -- compare pranava wrok with the AAAI paper -- optimise the model
@@ -35,4 +36,6 @@ The PyTorch Profiler is the most comprehensive tool, offering detailed memory an
 These PyTorch-native tools provide more accurate and detailed memory profiling than external tools, especially for GPU memory usage and layer-by-layer analysis. The PyTorch Profiler is particularly powerful for understanding exactly where memory is being used in your weight-shared model.
 
 ## CNNs and object detection
+
+=======
 
