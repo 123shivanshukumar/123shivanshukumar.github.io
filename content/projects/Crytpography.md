@@ -1,6 +1,6 @@
 +++
 title = "Cryptography"
-weight = 3
+weight = 7
 +++
 
 Links to some nice courses:
@@ -11,3 +11,4 @@ Links to some nice courses:
 
 
 For a good foundational and intuitive understanding [these](https://www.youtube.com/watch?v=iTVyKbDCJrA&list=PLgMDNELGJ1CbdGLyn7OrVAP-IKg-0q2U2) videos by Prof. Ashish Choudhary are very useful.
+

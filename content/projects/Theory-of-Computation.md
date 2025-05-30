@@ -1,6 +1,6 @@
 +++
 title = "Theory of computation"
-weight = 9
+weight = 5
 +++
 
 [Here](https://www.cse.iitb.ac.in/~akg/courses/2019-cs310/index.html) are some good slides by Prof. S. Akshay and Prof. Ashutosh Gupta at IIT Bombay

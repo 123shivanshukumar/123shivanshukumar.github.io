@@ -1,6 +1,6 @@
 +++
 title = "Graph Theory"
-weight = 2
+weight = 3
 +++
 
 - My [solutions](https://github.com/123shivanshukumar/Resources/blob/main/BondyMurthySolutions.pdf) to Bondy and Murthy's book. I still remember sitting for hours thinking about a problem and then the bravo moment :). Had lot of fun (and frustration) solving the book. The solutions are incomplete, if anyone wishes to volunteer for the remaining solutions, please [email](mailto:shivanshu.ydv@gmail.com) me, due attribution will be provided!

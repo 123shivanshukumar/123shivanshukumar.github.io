@@ -1,6 +1,6 @@
 +++
 title = "Algorithms"
-weight = 4
+weight = 6
 +++
 
 ## Possible workflow:

@@ -1,6 +1,6 @@
 +++
 title = "Computer Architecture"
-weight = 1
+weight = 4
 +++
 
 - Excellent set of resources by [Prof. Smruti Sarangi](https://www.cse.iitd.ac.in/~srsarangi/archbooksoft.html) I would highly recommend going through his other systems courses. He has written excellent books and lots of resources on his website. 
