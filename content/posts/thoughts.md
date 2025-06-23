@@ -15,7 +15,7 @@ The purpose of this blog is to share some ideas / questions I have been thinking
 # 1 Curiosity vs impact 
 I love reading advice posts and have observed two schools of thought in what should be done or how to choose the problems to solve -- follow ur curiosity or chase what could be impactful -- these are many times not conflicting, infact when they aren't they lead to Apples, Googles, Microsofts, etc
 
-(I have read Sam Altman and Naval Ravikant emphasize on becoming the best at what you do -- something u r good at makes u motivated to do it -- but might be something that u might be super curious about or lets say -- doing for fun, this is about that kind of a conflict.)
+(I have read Sam Altman and Naval Ravikant emphasize on becoming the best at what you do -- something u r good at makes u motivated to do it -- but may not be something that u might be super curious about or lets say -- doing for fun, this is about that kind of a conflict.)
 
 While what we are innately curious about might provide the drive and hence lead to great work, but it is not destined to have an impact. On the other hand, you might pour your blood and sweat into working hard on things that have an impact, gain fame or at the very least satisfaction from having contributed something meaningful, but is that a good way to do things? The down side is you have to drive yourself in a different way -- the push doesnt come from within -- of course it might with time, when u get good at things and see them working out, u do get dopamine surges, but the initial momentum has to be developed from a sense of ambition / vision or desire for money or anything else
 
