@@ -1,9 +1,12 @@
-+++ 
-title = "Cool people I found on internet" date = "2025-06-22"
++++
+title = "Cool people I found on the internet"
+date = "2025-06-22"
 
-[taxonomies] tags=["personal", "people"]
+[taxonomies]
+tags=["people", "personal"]
 
-[extra] comment = true 
+[extra]
+comment = true
 +++
 
 A list of interesting people similar to what [Patrick Collision](https://patrickcollison.com/people) and [Alexey Guzey](https://guzey.com/people) have made:
