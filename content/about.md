@@ -19,4 +19,4 @@ Some cool people I met on the way:
 - [Aryan Jain](http://hotrod462.vercel.app/) - The most determined, courageous and focussed person I ever met. He was one of my best friends at IITM, we were roommates for about an year.
 - [Md. Isfarul Haque](https://innocentzero.is-a.dev/) - A deeply technical, genius and supportive senior. Helped me through tons of things (In fact this website was built using [something](https://www.getzola.org/) he suggested)
 
-A list of cool people I found on the internet can be found here.
+A list of cool people I found on the internet can be found [here](https://123shivanshukumar.github.io/posts/people/).
