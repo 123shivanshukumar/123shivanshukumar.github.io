@@ -113,17 +113,24 @@
     {% endif %}
 
     {% if config.extra.mathjax | default(value=false) %}
+    <script>
+    MathJax = {
+      tex: {
         {% if config.extra.mathjax_dollar_inline_enable | default(value=false) %}
-            <script>
-            MathJax = {
-              tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-              }
-            };
-            </script>
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        {% else %}
+        inlineMath: [['\\(', '\\)']],
         {% endif %}
-        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-        </script>
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        packages: {'[+]': ['physics', 'ams', 'mathtools', 'color']}
+      },
+      loader: {
+        load: ['[tex]/physics', '[tex]/ams', '[tex]/mathtools', '[tex]/color']
+      }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
     {% endif %}
 
     {# RSS #}
