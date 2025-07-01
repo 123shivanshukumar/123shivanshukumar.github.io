@@ -8,7 +8,7 @@ tags=["personal"]
 [extra]
 comment = true
 +++
-There are some things that are consistently going on inside my head -- I need to split these out somewhere - say on a walk or while doing some non-technical work -- not only does this solidify the idea -- but clears space in ur brain for more ideas
+There are some things that are consistently going on inside my head -- I need to split these out somewhere - writing helps clears space in ur brain
 
 ## 1. Competition vs Collaboration
 >You may not be able to relate to this if u are not from India :((
