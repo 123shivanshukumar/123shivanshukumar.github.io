@@ -1,9 +1,9 @@
 +++
 title = "Some recent thoughts v2"
-date = "2025-06-28"
+date = "2025-07-01"
 
 [taxonomies]
-tags=["deep learning", "math"]
+tags=["personal"]
 
 [extra]
 comment = true
