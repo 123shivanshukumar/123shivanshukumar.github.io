@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="dark light">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https:&#x2F;&#x2F;123shivanshukumar.github.io">
+
+    
+
+    
+    
+    
+        <title>
+            
+                Rebooting
+            
+        </title>
+
+        
+            <meta property="og:title"
+                  content="Rebooting" />
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+    
+
+    
+    
+        <link href=https://123shivanshukumar.github.io/fonts.css rel="stylesheet" />
+    
+
+    
+    
+        
+
+        
+    
+
+    
+    <script src=https://123shivanshukumar.github.io/js/codeblock.js></script>
+
+    
+    
+
+    
+    
+        <script src=https://123shivanshukumar.github.io/js/note.js></script>
+    
+
+    
+    <script>
+    MathJax = {
+      tex: {
+        
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        packages: {'[+]': ['physics', 'ams', 'mathtools', 'color']}
+      },
+      loader: {
+        load: ['[tex]/physics', '[tex]/ams', '[tex]/mathtools', '[tex]/color']
+      }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    
+
+    
+    <link rel="alternate"
+          type="application/atom+xml"
+          title=""
+          href="https://123shivanshukumar.github.io/atom.xml">
+
+
+    
+    
+        <link rel="stylesheet"
+              type="text/css"
+              href="https://123shivanshukumar.github.io/theme/light.css" />
+        <link id="darkModeStyle"
+              rel="stylesheet"
+              type="text/css"
+              href="https://123shivanshukumar.github.io/theme/dark.css" />
+    
+
+    <!-- Set the correct theme in the script -->
+
+    
+        <script src=https://123shivanshukumar.github.io/js/themetoggle.js></script>
+
+        
+            <script>setTheme(getSavedTheme());</script>
+        
+    
+
+
+    <link rel="stylesheet"
+          type="text/css"
+          media="screen"
+          href="https://123shivanshukumar.github.io/main.css" />
+
+    
+
+    
+        <script defer
+                src="https://123shivanshukumar.github.io/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script></head>
+
+
+    <body>
+        <div class="content">
+            <header>
+    <div class="main">
+        
+            <a href=https:&#x2F;&#x2F;123shivanshukumar.github.io></a>
+        
+
+
+        <div class="socials">
+            
+                <a rel="me" href="https:&#x2F;&#x2F;x.com&#x2F;shivan123shu" class="social">
+                    <img alt="twitter"
+                         src="https://123shivanshukumar.github.io/icons/social/twitter.svg">
+                </a>
+            
+                <a rel="me" href="https:&#x2F;&#x2F;github.com&#x2F;123shivanshukumar" class="social">
+                    <img alt="github"
+                         src="https://123shivanshukumar.github.io/icons/social/github.svg">
+                </a>
+            
+        </div>
+    </div>
+
+    <nav>
+        
+            <a href=https://123shivanshukumar.github.io/posts style="margin-left: 0.25em">Blog</a>
+        
+            <a href=https://123shivanshukumar.github.io/projects style="margin-left: 0.25em">Resources</a>
+        
+            <a href=https://123shivanshukumar.github.io/about style="margin-left: 0.25em">About</a>
+        
+            <a href=https://123shivanshukumar.github.io/tags style="margin-left: 0.25em">Tags</a>
+        
+
+        
+            <button id="search-button"
+                    class="search-button"
+                    title="$SHORTCUT to open search">
+                <img src="https://123shivanshukumar.github.io/icons/search.svg"
+                     alt="Search"
+                     class="search-icon">
+            </button>
+
+            <div id="searchModal"
+                 class="search-modal js"
+                 role="dialog"
+                 aria-labelledby="modalTitle">
+                <div id="modal-content">
+                    <h1 id="modalTitle" class="page-header">Search</h1>
+                    <div id="searchBar">
+                        <input id="searchInput"
+                               role="combobox"
+                               autocomplete="off"
+                               spellcheck="false"
+                               aria-expanded="false"
+                               aria-controls="results-container"
+                               placeholder="Search..." />
+                        <button id="clear-search" class="clear-button" title="Clear search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="results-container">
+                        <div id="results-info">
+                            <span id="zero_results" style="display: none;">No results</span>
+                            <span id="one_result" style="display: none;">1 result</span>
+                            <span id="many_results" style="display: none;">$NUMBER results</span>
+                        </div>
+                        <div id="results" role="listbox"></div>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+            <a id="dark-mode-toggle"
+               onclick="toggleTheme(); event.preventDefault();"
+               href="#">
+                <img src="https://123shivanshukumar.github.io/icons/sun.svg"
+                     id="sun-icon"
+                     style="filter: invert(1)"
+                     alt="Light" />
+                <img src=https://123shivanshukumar.github.io/icons/moon.svg id="moon-icon" alt="Dark" />
+            </a>
+
+            <!-- Inititialize the theme toggle icons -->
+            <script>updateItemToggleTheme()</script>
+        
+    </nav>
+</header>
+
+
+            
+            
+    
+    <main>
+        <article>
+            <div class="title">
+                
+                
+    <div class="page-header">
+        Rebooting<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
+
+
+                <div class="meta">
+                    
+                        Posted on <time>2025-05-19</time>
+                    
+
+                    
+
+                    
+
+                    :: 554 Words
+
+                    
+                    
+                        <span class="tags-label">:: Tags:</span>
+                        <span class="tags">
+                                <a href="https://123shivanshukumar.github.io/tags/personal/"
+                                   class="post-tag">personal</a>
+                                
+                            
+                        </span>
+                    
+
+                    
+                    
+
+                    
+
+                </div>
+            </div>
+
+            
+
+            
+            
+
+            <section class="body">
+                <p>Yeah I am planning on a full on reboot :)
+Till now I had built my thoughts and life based on the kind of things society made me value - "great intellect", "charisma", "stability" and what not. Not anymore, I am dropping all of that nonsense and have begun a search for purpose - the purpose of my existence which I do not think is trivial.</p>
+<h3 id="background"><a class="zola-anchor" href="#background" aria-label="Anchor link for: background">Background</a></h3>
+<p>I do not expect anyone to read this lol, so saying my heart out loud. Here at IIT, I am one of the ideal students that recruiters (typically quant firms ) look for, Highest rank in the institute, 9.8 GPA, consistent metrics of academic performance - "an obidient, hardworking and intellectually sound employee". Similar to a race that I ran in JEE, a lot of students are running now for getting an internship at these firms -  everything is well established, there are placement teams out there for helping students, lot of senior-junior interaction is going on, on how to do the best and what not.</p>
+<p>Everyone is preparing to sell themselves in a huge market - where the game is zero sum - a proper hunger game.</p>
+<p>I sometimes wonder - these are supposed to be the top minds of India - particularly those who choose CS major have the highest ranks, but it is so unfortunate to see them fight for "survival" rather than strive for growth. The worst part is barely anyone knows what they will be doing out of college - sure, I have a job that pays me a humungous amount - then what? Is is all over ?</p>
+<p>I faced a similar situation when I came here at IIT. Lost! No idea what the hell I am here for. Amidst academics and constant societal approval I did not care about this for quite some time, but now when I look back, I realise how flawed all that was!</p>
+<p>When I joined in though, I had some sense of not joining this race, so I chose another race - the <em>grad school race</em>, which is a slightly less one path - but again the notion still remains - get the best GPA in your class - do flashy projects - try hard for a publication in your undergrad - die to get into one of the best colleges in the US and then .... blank!</p>
+<p>I came out of this also, oh boy this one was HARRD. I literally gave up on something I had probably building upon for the past 4 years !!! Studying math, theory, doing good in courses and blah blah blah, without thinking what would be useful for real research.</p>
+<p>Now here I am having turned all the wheels back to 0, clueless on what exaclty I want to do or at least I am meant for...
+One thing is certain - I LOVE COMPUTER SCIENCE - studying random things in CS is one of those things I did purely out of interest - no one told me to do so, infact reading some random theory CS / abstract math / learning a new programming language are some things I loved to do in my first year of college.</p>
+<p>So yeah that's it -- a summary of what I have been going through. But not gonna stop here, as per <a href="https://patrickcollison.com/advice">Patrick Collision's</a> advice, I will stalk great people - learn from them and think about how I should make my own decisions.</p>
+
+            </section>
+        </article>
+    </main>
+
+
+
+            
+                
+            
+
+            
+                <div class="giscus"></div>
+                <script src="https://utteranc.es/client.js" repo="YOUR_NAME/YOUR_REPO" issue-term="pathname" theme="github-light" crossorigin="anonymous" async>
+</script>
+
+            
+        </div>
+    </body>
+
+</html>

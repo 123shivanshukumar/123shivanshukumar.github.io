@@ -3,7 +3,7 @@ title = "Some recent thoughts"
 date = "2025-06-21"
 
 [taxonomies]
-tags=["philosophy", "personal"]
+tags=["thoughts"]
 
 [extra]
 comment = true

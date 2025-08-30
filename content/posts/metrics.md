@@ -3,7 +3,7 @@ title = "It is all about metrics"
 date = "2025-08-30"
 
 [taxonomies]
-tags=["philosophy", "personal"]
+tags=["thoughts"]
 
 [extra]
 comment = true
