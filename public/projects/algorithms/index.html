@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="dark light">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https:&#x2F;&#x2F;123shivanshukumar.github.io">
+
+    
+
+    
+    
+    
+        <title>
+            
+                Algorithms
+            
+        </title>
+
+        
+            <meta property="og:title"
+                  content="Algorithms" />
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+    
+
+    
+    
+        <link href=https://123shivanshukumar.github.io/fonts.css rel="stylesheet" />
+    
+
+    
+    
+        
+
+        
+    
+
+    
+    <script src=https://123shivanshukumar.github.io/js/codeblock.js></script>
+
+    
+    
+
+    
+    
+        <script src=https://123shivanshukumar.github.io/js/note.js></script>
+    
+
+    
+    <script>
+    MathJax = {
+      tex: {
+        
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        packages: {'[+]': ['physics', 'ams', 'mathtools', 'color']}
+      },
+      loader: {
+        load: ['[tex]/physics', '[tex]/ams', '[tex]/mathtools', '[tex]/color']
+      }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    
+
+    
+    <link rel="alternate"
+          type="application/atom+xml"
+          title=""
+          href="https://123shivanshukumar.github.io/atom.xml">
+
+
+    
+    
+        <link rel="stylesheet"
+              type="text/css"
+              href="https://123shivanshukumar.github.io/theme/light.css" />
+        <link id="darkModeStyle"
+              rel="stylesheet"
+              type="text/css"
+              href="https://123shivanshukumar.github.io/theme/dark.css" />
+    
+
+    <!-- Set the correct theme in the script -->
+
+    
+        <script src=https://123shivanshukumar.github.io/js/themetoggle.js></script>
+
+        
+            <script>setTheme(getSavedTheme());</script>
+        
+    
+
+
+    <link rel="stylesheet"
+          type="text/css"
+          media="screen"
+          href="https://123shivanshukumar.github.io/main.css" />
+
+    
+
+    
+        <script defer
+                src="https://123shivanshukumar.github.io/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script></head>
+
+
+    <body>
+        <div class="content">
+            <header>
+    <div class="main">
+        
+            <a href=https:&#x2F;&#x2F;123shivanshukumar.github.io></a>
+        
+
+
+        <div class="socials">
+            
+                <a rel="me" href="https:&#x2F;&#x2F;x.com&#x2F;shivan123shu" class="social">
+                    <img alt="twitter"
+                         src="https://123shivanshukumar.github.io/icons/social/twitter.svg">
+                </a>
+            
+                <a rel="me" href="https:&#x2F;&#x2F;github.com&#x2F;123shivanshukumar" class="social">
+                    <img alt="github"
+                         src="https://123shivanshukumar.github.io/icons/social/github.svg">
+                </a>
+            
+        </div>
+    </div>
+
+    <nav>
+        
+            <a href=https://123shivanshukumar.github.io/posts style="margin-left: 0.25em">Blog</a>
+        
+            <a href=https://123shivanshukumar.github.io/projects style="margin-left: 0.25em">Resources</a>
+        
+            <a href=https://123shivanshukumar.github.io/about style="margin-left: 0.25em">About</a>
+        
+            <a href=https://123shivanshukumar.github.io/tags style="margin-left: 0.25em">Tags</a>
+        
+
+        
+            <button id="search-button"
+                    class="search-button"
+                    title="$SHORTCUT to open search">
+                <img src="https://123shivanshukumar.github.io/icons/search.svg"
+                     alt="Search"
+                     class="search-icon">
+            </button>
+
+            <div id="searchModal"
+                 class="search-modal js"
+                 role="dialog"
+                 aria-labelledby="modalTitle">
+                <div id="modal-content">
+                    <h1 id="modalTitle" class="page-header">Search</h1>
+                    <div id="searchBar">
+                        <input id="searchInput"
+                               role="combobox"
+                               autocomplete="off"
+                               spellcheck="false"
+                               aria-expanded="false"
+                               aria-controls="results-container"
+                               placeholder="Search..." />
+                        <button id="clear-search" class="clear-button" title="Clear search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="results-container">
+                        <div id="results-info">
+                            <span id="zero_results" style="display: none;">No results</span>
+                            <span id="one_result" style="display: none;">1 result</span>
+                            <span id="many_results" style="display: none;">$NUMBER results</span>
+                        </div>
+                        <div id="results" role="listbox"></div>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+            <a id="dark-mode-toggle"
+               onclick="toggleTheme(); event.preventDefault();"
+               href="#">
+                <img src="https://123shivanshukumar.github.io/icons/sun.svg"
+                     id="sun-icon"
+                     style="filter: invert(1)"
+                     alt="Light" />
+                <img src=https://123shivanshukumar.github.io/icons/moon.svg id="moon-icon" alt="Dark" />
+            </a>
+
+            <!-- Inititialize the theme toggle icons -->
+            <script>updateItemToggleTheme()</script>
+        
+    </nav>
+</header>
+
+
+            
+            
+    
+    <main>
+        <article>
+            <div class="title">
+                
+                
+    <div class="page-header">
+        Algorithms<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
+
+
+                <div class="meta">
+                    
+
+                    
+
+                    
+
+                    :: 317 Words
+
+                    
+                    
+
+                    
+                    
+
+                    
+
+                </div>
+            </div>
+
+            
+
+            
+            
+
+            <section class="body">
+                <h2 id="possible-workflow">Possible workflow:</h2>
+<ul>
+<li>Unfortunately I havent found a complete playlist for this course as offered at IITM, but you can find some good playlists in the Miscellaneous links section. For detailed refernces - <a href="https://www.cse.iitm.ac.in/~jayalal/teaching/lectures.php?courseid=82">Prof. Jayalal's page</a> or <a href="https://yaduvasudev.github.io/courses/2800/23/">Prof. Yadu's Page</a></li>
+<li>Definitely solve CLRS exercises inside the text. These give you fine insights about the algorithm -- a good thing to understand since these are very fundamental. Some of the exercises are good math/logic puzzle which further enhance your thinking, trust me worth a shot</li>
+<li>Solve the Problem sets <a href="https://github.com/123shivanshukumar/Resources/tree/main/CS2800-problem-sets">here</a>. These are standard textbook problems, solutions should be available online, not posting here - if you follow contents according to Prof Jayalal's page</li>
+<li>Solve problem sets <a href="https://yaduvasudev.github.io/courses/2800/23/">here</a> - if you follow contents according to Prof Yadu's page</li>
+<li>This is both important for foundations in DSA and an important course with emphasis on proofs. Make sure to iterate through proofs and get to the most concise proof possible without loss in correctness -- comes through sheer practise.</li>
+</ul>
+<h2 id="miscellaneous-links">Miscellaneous links</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=gY0MwGLq9W8&amp;list=PLyqSpQzTE6M9DKhN7z2fOpKTJWu-639_P">Lecture videos</a> by Prof. Madhavan Mukund, CMI</li>
+<li><a href="https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015">An excellent course by MIT OCW</a></li>
+<li><a href="https://homepage.cs.uiowa.edu/~sriram/3330/spring17/">Prof Sriram's course at U Iowa</a></li>
+</ul>
+<h2 id="some-nice-papers-articles">Some nice papers/articles</h2>
+<ul>
+<li><a href="https://jeffe.cs.illinois.edu/teaching/algorithms/notes/99-recurrences.pdf">recurrences by Prof Jeff</a></li>
+<li><a href="https://www.cse.iitk.ac.in/users/manindra/algebra/primality_v6.pdf">The AKS algorithm for primality testing in polynomial time</a></li>
+<li><a href="https://people.csail.mit.edu/mip/papers/invs/paper.pdf">Something on inversions I never read</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/0020019079900851?via%3Dihub">Rabin's nearest neighbour algo</a></li>
+<li><a href="https://medium.com/@alex.liu.roc/demystifying-tensor-strassens-algorithm-c1eb5c9a972c">A nice analysis on why 7 is the minimum number of mat muls u need to do in any mat mul algo</a></li>
+</ul>
+
+            </section>
+        </article>
+    </main>
+
+
+
+            
+                
+            
+
+            
+        </div>
+    </body>
+
+</html>

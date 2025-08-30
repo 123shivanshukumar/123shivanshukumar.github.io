@@ -15,3 +15,10 @@ weight = 6
 - [An excellent course by MIT OCW](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015)
 - [Prof Sriram's course at U Iowa](https://homepage.cs.uiowa.edu/~sriram/3330/spring17/)
 
+## Some nice papers/articles
+- [recurrences by Prof Jeff](https://jeffe.cs.illinois.edu/teaching/algorithms/notes/99-recurrences.pdf)
+- [The AKS algorithm for primality testing in polynomial time](https://www.cse.iitk.ac.in/users/manindra/algebra/primality_v6.pdf)
+- [Something on inversions I never read](https://people.csail.mit.edu/mip/papers/invs/paper.pdf)
+- [Rabin's nearest neighbour algo](https://www.sciencedirect.com/science/article/pii/0020019079900851?via%3Dihub)
+- [A nice analysis on why 7 is the minimum number of mat muls u need to do in any mat mul algo](https://medium.com/@alex.liu.roc/demystifying-tensor-strassens-algorithm-c1eb5c9a972c)
+
