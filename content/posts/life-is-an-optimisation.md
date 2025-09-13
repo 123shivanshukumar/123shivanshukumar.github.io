@@ -30,5 +30,6 @@ In essence, I mean to say
 
 Some might say "Hey no! I _should_ do blah" -- it is most likely to be a matter of choice - going deep down to the basics. So, with the limited view of life I have right now, I would say minimizing such constraints or rather minimizing unchosen constraints can be very liberating. 
 
-This post is highly inspired from Victor Frankl's book - Man's search for meaning. I am not talking about logotherapy or finding purpose here but the ability of man to still "think" the way he wants to, in an environment as harsh as a concentration camp. If you and I are under better circumstances, where our actions are not monitored by someone else and we can walk and talk freely - _why not think freely_ ?
+The other thing is often we might optimize on metrics curated by society to raise ourselves to a level where we can think more broadly -- but this action is driven towards a goal that we chose for ourselves not the metric itself. 
 
+This post is highly inspired from Victor Frankl's book - Man's search for meaning. I am not talking about logotherapy or finding purpose here but the ability of man to still "think" the way he wants to, in an environment as harsh as a concentration camp. If you and I are under better circumstances, where our actions are not monitored by someone else and we can walk and talk freely - _why not think freely_ ?
