@@ -1,7 +1,6 @@
 +++
 title = "Resources"
 sort_by = "weight"
-template = "cards.html"
 +++
 
 These are some of the educational resources I found on the web / received from my courses at IIT Madras. If you think there is any copyright violation / misuse, please [contact](mailto:shivanshu.ydv@gmail.com) me, the content will be removed. 

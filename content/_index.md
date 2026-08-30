@@ -1,10 +1,12 @@
 +++
-title= "Shivanshu Kumar"
-template = "homepage.html"
+title = "Shivanshu Kumar"
 +++
-Hi! I am Shivanshu Kumar, welcome to my blog site!
 
-Check out the following links!
-- [Blog](https://123shivanshukumar.github.io/posts/) - a collection of thoughts on technical and non technical stuff
-- [Resources](https://123shivanshukumar.github.io/projects/) contains a bunch of academic resources I found on the way
-- [About](https://123shivanshukumar.github.io/about/) - if you wanna know more about me :)
+I'm Shivanshu Kumar, a Computer Science undergrad at the [Indian Institute of
+Technology, Madras](https://www.iitm.ac.in/).
+
+This site collects what I write and what I've found worth keeping.
+
+- [Writing](/posts/) — essays and notes, technical and otherwise
+- [Resources](/projects/) — course material and references I've gathered along the way
+- [Tags](/tags/) — everything sorted by subject

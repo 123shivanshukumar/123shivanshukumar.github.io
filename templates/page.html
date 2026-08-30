@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} &middot; {{ config.title }}{% endblock %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock %}
+
+{% block content %}
+<article>
+  <header class="post-head">
+    <h1>{{ page.title }}</h1>
+
+    {% if page.date or page.reading_time %}
+    <p class="meta">
+      {% if page.date %}<time datetime="{{ page.date }}">{{ page.date | date(format="%d %B %Y") }}</time>{% endif %}
+      {% if page.reading_time %}<span class="dot">&middot;</span>{{ page.reading_time }} min read{% endif %}
+      {% if page.taxonomies.tags %}
+        <span class="dot">&middot;</span>
+        {% for tag in page.taxonomies.tags %}<a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) }}">{{ tag }}</a>{% endfor %}
+      {% endif %}
+    </p>
+    {% endif %}
+
+    {% include "partials/translations.html" %}
+  </header>
+
+  <div class="prose">
+    {{ page.content | safe }}
+  </div>
+</article>
+
+{% if page.earlier or page.later %}
+<nav class="post-nav">
+  <div>{% if page.later %}<span class="section-label">Next</span><a href="{{ page.later.permalink }}">{{ page.later.title }}</a>{% endif %}</div>
+  <div class="right">{% if page.earlier %}<span class="section-label">Previous</span><a href="{{ page.earlier.permalink }}">{{ page.earlier.title }}</a>{% endif %}</div>
+</nav>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+{% if page.extra.math | default(value=true) %}{% include "partials/math.html" %}{% endif %}
+{% endblock %}

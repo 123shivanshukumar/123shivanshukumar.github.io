@@ -1,0 +1,13 @@
+{# Renders: "View this blog in Tamil, Hindi." — only when translations exist. #}
+{% if page.translations | length > 1 %}
+<p class="translations">
+  {{ config.extra.ui[lang].view_in | default(value=config.extra.ui.en.view_in) }}
+  {%- set_global sep = " " -%}
+  {%- for t in page.translations -%}
+    {%- if t.lang != page.lang -%}
+      {{ sep }}<a href="{{ t.permalink | safe }}" hreflang="{{ t.lang }}">{{ config.extra.language_names[t.lang] | default(value=t.lang) }}</a>
+      {%- set_global sep = ", " -%}
+    {%- endif -%}
+  {%- endfor -%}
+</p>
+{% endif %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} &middot; {{ config.title }}{% endblock %}
+{% block description %}{{ section.description | default(value=config.description) }}{% endblock %}
+
+{% block content %}
+<header class="page-head">
+  <h1>{{ section.title }}</h1>
+  {% if section.description %}<p class="lede">{{ section.description }}</p>{% endif %}
+</header>
+
+{% if section.content %}
+<div class="prose">{{ section.content | safe }}</div>
+{% endif %}
+
+{% if section.pages | length > 0 %}
+  {% set pages = section.pages %}
+  {% include "partials/post_list.html" %}
+{% endif %}
+
+{% if section.subsections | length > 0 %}
+<ul class="post-list">
+  {% for s in section.subsections %}
+    {% set sub = get_section(path=s) %}
+    <li><a class="post-link" href="{{ sub.permalink }}"><span class="post-title">{{ sub.title }}</span></a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}{% include "partials/math.html" %}{% endblock %}

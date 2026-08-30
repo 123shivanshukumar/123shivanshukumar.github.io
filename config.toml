@@ -1,42 +1,89 @@
-# The URL the site will be built for
 base_url = "https://123shivanshukumar.github.io"
+title = "Shivanshu Kumar"
+description = "Notes, essays and resources on math, computer science and whatever else is on my mind."
+author = "Shivanshu Kumar"
 
-# Whether to automatically compile all Sass files in the sass directory
+default_language = "en"
 compile_sass = true
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["atom.xml"]
 
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+taxonomies = [{ name = "tags", feed = false }]
 
-
-theme = "apollo"
-taxonomies = [{ name = "tags" }]
-[search]
-include_title = true
-include_description = true
-include_path = true
-include_content = true
-index_format = "elasticlunr_json"
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "subway-madrid"
+smart_punctuation = false
+bottom_footnotes = true
+
+# ---------------------------------------------------------------------------
+# Languages.
+# Adding a translation language = add a block here, nothing else.
+#   1. add   [languages.xx]  below  (+ its taxonomies line)
+#   2. add   xx = "Native name"  under [extra.language_names]
+#   3. write content/posts/my-post.xx.md  and  content/posts/_index.xx.md
+# ---------------------------------------------------------------------------
+[languages.ta]
+title = "Shivanshu Kumar"
+description = "எண்ணங்கள், கட்டுரைகள்"
+generate_feeds = true
+taxonomies = [{ name = "tags", feed = false }]
+
+[languages.hi]
+title = "Shivanshu Kumar"
+description = "विचार और लेख"
+generate_feeds = true
+taxonomies = [{ name = "tags", feed = false }]
+
+[languages.de]
+title = "Shivanshu Kumar"
+generate_feeds = true
+taxonomies = [{ name = "tags", feed = false }]
+
+[languages.bn]
+title = "Shivanshu Kumar"
+generate_feeds = true
+taxonomies = [{ name = "tags", feed = false }]
+
 [extra]
+# UI strings per language. A language with no table here (or a missing key)
+# silently falls back to the English string below — nothing breaks.
+[extra.ui.en]
+view_in = "View this blog in"
+recent = "Recent writing"
+all_writing = "All writing"
 
-theme = "toggle"
-menu = [
-    { name = "Blog", url = "/posts", weight = 1 },
-    { name = "Resources", url = "/projects", weight = 2 },
-    { name = "About", url = "/about", weight = 3 },
-    { name = "Tags", url = "/tags", weight = 3 },
-    
-]
+[extra.ui.ta]
+view_in = "இந்த வலைப்பதிவை இதில் காண்க"
+recent = "சமீபத்திய கட்டுரைகள்"
+all_writing = "அனைத்து கட்டுரைகள்"
 
-socials = [
-    { name = "twitter", url = "https://x.com/shivan123shu", icon = "twitter" },
-    { name = "github", url = "https://github.com/123shivanshukumar", icon = "github" },
+[extra.ui.hi]
+view_in = "इस ब्लॉग को पढ़ें"
+recent = "हाल के लेख"
+all_writing = "सभी लेख"
+
+[extra.ui.de]
+view_in = "Diesen Blog lesen auf"
+recent = "Neueste Beiträge"
+all_writing = "Alle Beiträge"
+
+[extra.ui.bn]
+view_in = "এই ব্লগটি পড়ুন"
+recent = "সাম্প্রতিক লেখা"
+all_writing = "সব লেখা"
+
+# How each language code is displayed in the "View this blog in ..." line.
+[extra.language_names]
+en = "English"
+ta = "Tamil"
+hi = "Hindi"
+de = "German"
+bn = "Bangla"
+
+[extra.socials]
+links = [
+  { name = "github", url = "https://github.com/123shivanshukumar" },
+  { name = "twitter", url = "https://x.com/shivan123shu" },
 ]
-fancy_code = true
-dynamic_note = true
-mathjax = true
-mathjax_dollar_inline_enable = true
-[extra.analytics]
-enabled = true

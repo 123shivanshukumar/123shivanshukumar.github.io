@@ -1,0 +1,12 @@
+{# expects: pages #}
+<ul class="post-list">
+  {% for p in pages %}
+  <li>
+    <a class="post-link" href="{{ p.permalink | safe }}">
+      <span class="post-title">{{ p.title }}</span>
+      {% if p.date %}<time datetime="{{ p.date }}">{{ p.date | date(format="%d %b %Y") }}</time>{% endif %}
+    </a>
+    {% if p.description %}<p class="post-desc">{{ p.description }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
