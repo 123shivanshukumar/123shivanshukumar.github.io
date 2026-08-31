@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mathematical insights into Regularisation &middot; Shivanshu Kumar</title>
+  <meta name="description" content="Notes, essays and resources on math, computer science and whatever else is on my mind.">
+  <meta name="author" content="Shivanshu Kumar">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://123shivanshukumar.github.io/main.css">
+  
+  <link rel="alternate" type="application/atom+xml" title="Shivanshu Kumar" href="https://123shivanshukumar.github.io/atom.xml">
+  
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="https://123shivanshukumar.github.io">Shivanshu Kumar</a>
+    <nav>
+      <button id="theme-toggle" type="button" aria-label="Toggle colour theme">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path class="sun" d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.41-1.41M4.93 19.07l1.41-1.41m11.32 0 1.41 1.41M4.93 4.93l1.41 1.41M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/><path class="moon" d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    
+<article>
+  <header class="post-head">
+    <h1>Mathematical insights into Regularisation</h1>
+
+    
+    <p class="meta">
+      <time datetime="2025-06-28">28 June 2025</time>
+      <span class="dot">&middot;</span>10 min read
+      
+        <span class="dot">&middot;</span>
+        <a class="tag" href="https://123shivanshukumar.github.io/tags/deep-learning/">deep learning</a><a class="tag" href="https://123shivanshukumar.github.io/tags/math/">math</a>
+      
+    </p>
+    
+
+    
+
+
+  </header>
+
+  <div class="prose">
+    <p>This post deals with some deep mathemtical insights into why regularisation is done the way it is and how does it impact model learning, mathematically.</p>
+<h2 id="some-background"><a class="zola-anchor" href="#some-background" aria-label="Anchor link for: some-background">Some Background</a></h2>
+<p>Well Neural Networks are essentially function-approximaters - you give then a bunch of data points and the corresponding outputs and then try to predict output over an unseen data point.
+Now suppose I am trying to fit in a polynomial with coefficients as weights and a controllable degree parameter -- this is something I will try several times to see what works the best.
+Consider the two cases - $d =3$ and $d = 9$ trying to fit a sinusoid.</p>
+<p><img src="../img1.png" alt="img1" /></p>
+<p>Well for the latter the curve becomes too wigly and less generalised -- although our error is zero - by the fundamental theorem of Algebra - a polynomial of degree d would have atmost d real roots and 10 points are sufficient to describe a polynomial fully -- put another way - as long as you have $\leq$ 10 points you can "fit" your dataset fully!
+As we can see, this leads to generalisation problems. So there are two issues:</p>
+<ol>
+<li>Excessively many parameters make the model more complicated than required and hence not smoothly generalise</li>
+<li>The input data is more often than not "Noisy" -- the outputs that you see are typically true ouput + some error $\epsilon$ i.e., driving the loss to 0 means fitting on wrong (somewhat) data!</li>
+</ol>
+<p>Thus the objective $$\min \space \mathcal{L(\theta)}$$ is not a good one! Of course looking at graphs is not feasible for large datasets and complicated functions, we need something mathematical and algorithmic - Regularisation solves this problem :</p>
+<p>We try to minimise $\mathcal{L(\theta)} + \Omega(\theta)$ where $\Omega(\theta)$ somehow penalises the model complexity</p>
+<p>Often we have seen people using $L_2$ regularisation or weight decay (well in practise this means the coefficient $\alpha$ of the regulariser)
+$$\min \mathcal \space {L(\theta)} + \frac{\alpha}{2} \norm{w}^2 $$</p>
+<p>But where does this come from ? An intuitive explanation is that this penalises the excessive complexity these parameters might incur by taking large values -- I know right, not satisfactory!</p>
+<p>A bit of detour:</p>
+<h2 id="the-bayesian-paradigm"><a class="zola-anchor" href="#the-bayesian-paradigm" aria-label="Anchor link for: the-bayesian-paradigm">The Bayesian Paradigm:</a></h2>
+<p>This is one school of thinking in statistics and learning theory. This views selecting parameters for a distribution as maximising probability : we already have some prior idea of what those parameters (called weights in our case) should look like and the additional information received by the sample data helps us refine our understanding. Lets do this concretely -</p>
+<p>Assume that the weights in our model have a <a href="https://en.wikipedia.org/wiki/Normal_distribution">Gaussian</a> prior distribution with zero mean. For now assuming there is only one weight:
+$$p(w;\sigma) = \mathcal{N}(w|0, \sigma^2)$$</p>
+<p>To measure proximity of the chosen parameters to reality we use the technique
+of maximum likelihood estimation -- multiply the probabilities of all the data points with parameters (here weights) as variables and then optimize this product by differentiating and setting it to zero, and using the corresponding parameters as optimal -- in essense this gives us the parameters that are most likely for a model</p>
+<p>For concreteness - suppose we observe a dataset $t = {x_1, x_2 ... x_n}$ Say after seeing the data my posterior distribution is $p'(w,t)$ -- this means what is my "posterior" view of how likely a particular weight could be AFTER seeing the data</p>
+<p>To summarise - the prior distribution is my initial worldview on what weights are the most highly likely to be, without seeing any data. Now this view changes as I see some data. Mathematically this would mean:
+$$p(w,t) = p(t|w)*p(w)$$
+Now what is $p(t|w)$? -- How likely are these data points ($(x,y)$ pairs )given a parameter $w$. A bunch of independently drawn points means -- multiply !
+Thus $$p(t|w) = \prod_{i=1}^{n} p(x_i,y_i|w)$$</p>
+<p>Now maximising $p(w,t)$ gives us the likelihood of how well a particular $w$ would go with the data points in hand and our problem reduces to
+$$\max p(w)\times \prod_{i=1}^{n} p(x_i|w)$$</p>
+<p>We now $p(w)$. Lets also try to solve problem 2 of the two mentioned above, and include the error term,
+say the observed datapoint $y_i = f(x_i,w) + \epsilon$ for some true source function $f$ and the error is gaussian with zero mean and variance = $\beta (&gt;0)$ i.e., $\epsilon \sim \mathcal{N}(\epsilon|0,\beta)$
+It is easy to see that this is essentially
+$$y_i \sim \mathcal{N}(y_|f(x_i,w),\beta)$$ Essentially, the actual value is the observed value, with some small possible error around it</p>
+<p><img src="../img2.png" alt="img2" /></p>
+<p>$$\Rightarrow p(x_i,y_i|w) = \frac{1}{\sqrt{2\pi\beta}} e^{-(y_i - f(x_i,w))^2/2\beta}$$
+This looks ugly -- I know right, standard trick -- take logartihm both sides!</p>
+<p>since log is monotonically increasing -- it does not affect the objective and hence our problem is further reduced to</p>
+<p>$$\max_{w} \sum_{i=1}^{n}\log(p(x_i,y_i; w)) + \log(p(w))$$</p>
+<p>$$=\max_{w} -(\sum_{i=1}^{n}\frac{1}2{\log(2\pi\beta)}+\frac{(y_i - f(x_i,w))^2}{2\beta}) - \frac{1}2{\log(2\pi\sigma^2)}-\frac{w^2}{\sigma^2}$$
+Well assuming $\sigma$ and $\beta$ are constant,
+$$=\min_{w} (\sum_{i=1}^{n}\frac{(y_i - f(x_i,w))^2}{2\beta}) + \frac{w^2}{\sigma^2}$$
+Hold on ......... DOES THIS SEEM FAMILIAR ???? HOLY YEAHH</p>
+<p>this is literally Mean Squared loss + $l_2$ regularisation !!!</p>
+<p>Finally, to include more weights we just need to think of weight as a vector in a mutlivariate sense.</p>
+<p>How would the gaussian look like ? The mean as you would guess is a vector $\boldsymbol{\mu}$. Now since there are many variables -- we would like to measure the sensitivity of movement of a variable when we tweak one variable slightly -- well this is what the variance captures in the univariate sense.
+Hence instead of a number we have an $n\times n $ matrix known as the covariance matrix -- how much are two variables $x_i$ and $x_j$ related to each other ?
+Thus $$p(\mathbf{w}) = \frac{1}{(2\pi)^{d/2}|\boldsymbol{\Sigma}|^{1/2}} \exp\left(-\frac{1}{2}(\mathbf{w} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{w} - \boldsymbol{\mu})\right)$$</p>
+<p>Notice the similarity -- if $\mathbf{w}$ has just one variable, this reduces to our original expression.</p>
+<blockquote>
+<p>A note on quadratic vector expressions: an expression of the form $\sum\sum w_{ij} x_i x_j$ can be typically written in this format -- $x^TWx$ -- the ij element representing the term $x_ix_j$.</p>
+</blockquote>
+<p>Now setting $\boldsymbol{\mu = 0}$, and setting $\boldsymbol{\Sigma} = \sigma^2I$, for simplicity (for getting a feel for how gaussians change with the choice of $\boldsymbol{\Sigma}$ check <a href="https://fabiandablander.com/statistics/Two-Properties.html">this post</a>. Below is an image from there))</p>
+<p><img src="../img3.png" alt="img3" /></p>
+<p>The expression becomes similar to the above,
+$$=\min_{w} (\sum_{i=1}^{n}\frac{(y_i - f(x_i,w))^2}{2\beta}) +\left(\frac{1}{2}\mathbf{w}^T \mathbf{w} \right)$$</p>
+<p>Observe that $\mathbf{w}^T \mathbf{w} $ is indeed the $l_2$ norm.</p>
+<p>By the way ...</p>
+<p>Q : How is Bayesian Learning related to overfitting though?</p>
+<p>A: Well it allows the model to not rely too much on the data it has seen -- it has some extra "plausibility" information. Recall the sine curve - the Gaussian prior assumption "informs" the model of what would make more sense.</p>
+<p>Q: Sure, why only a Gaussian prior ?</p>
+<p>A:</p>
+<ol>
+<li>according to the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">central limit theorem</a> the sum of a large number of independent distributions converge to a gaussian - this takes into account the large number of random factors and makes it a reasonable choice to being with. A lot of distributions in the nature in fact turn out to be Gaussian.</li>
+<li>According to information theory, among all continuous distributions with a given mean and variance, Gaussian has maximum entropy, making it the "least informative" -- yep u heard me right -- this has lesser information than random uniform! (more on this in another post)</li>
+</ol>
+<h2 id="geometric-insights"><a class="zola-anchor" href="#geometric-insights" aria-label="Anchor link for: geometric-insights">Geometric insights</a></h2>
+<p>(since our params are w, not writing theta)
+Our objective is
+$$
+\widetilde{\mathcal{L}}(w)=\mathcal{L}(w)+\frac{\alpha}{2}|w|^2
+$$
+Taking gradients both sides, (note that w is a vector WLOG)
+$$\nabla \widetilde{\mathcal{L}}(w)=\nabla \mathcal{L}(w)+\alpha w$$</p>
+<blockquote>
+<p>To see why $\nabla(\norm{w}^2) = 2w$, expand $\norm{w}^2 = \sum w_i^2$, now taking the derivative with respect to the $i$th component, gives $2w_i$ hence the gradient vector is $2w$</p>
+</blockquote>
+<p>Now consider the multivariate Taylor's approximation of the train error function upto the second order,</p>
+<div>
+$$\mathcal{L}\left(w^*+u\right)=\mathcal{L}\left(w^*\right)+u^T \nabla \mathcal{L}\left(w^*\right)+\frac{1}{2} u^T H u$$
+</div>
+<blockquote>
+<p>Observe the similarity with the univariate case, $u^T \nabla \mathcal{L}\left(w^*\right)$ is the linear and $\frac{1}{2} u^T H u $ is the quadratic term. $H$ is the Hessian matrix and is some sort of a "multivariate double derivative" -- the i,j term tells how much the partial derivate wrt ith variable changes when you move a little bit in the jth variable -- and hence the matrix</p>
+</blockquote>
+<div>
+Now say $w*$ is the optimal solution to $\mathcal{L}(w)$, $\nabla \mathcal{L}(w^*) = 0$, thus we have,$$\mathcal{L}(w)=\mathcal{L}\left(w^*\right)+\left(w-w^*\right)^T \nabla \mathcal{L}\left(w^*\right)+\frac{1}{2}\left(w-w^*\right)^T H\left(w-w^*\right) $$$$=\mathcal{L}\left(w^*\right)+\frac{1}{2}\left(w-w^*\right)^T H\left(w-w^*\right)$$$$\nabla \mathcal{L}(w)=\nabla \mathcal{L}\left(w^*\right)+H\left(w-w^*\right) $$ $$=H\left(w-w^*\right) $$Now going back to the gradient of regularised loss,$$\quad \nabla \widetilde{\mathcal{L}}(w)=\nabla \mathcal{L}(w)+\alpha w = H\left(w-w^*\right) + \alpha w$$If $\widetilde{w}$ is the optimal solution to $\widetilde{\mathcal{L}}(w)$$$\nabla \widetilde{\mathcal{L}}(\widetilde{w})=0 $$$$\Rightarrow H\left(\widetilde{w}-w^*\right)+\alpha \widetilde{w}=0 $$$$\Rightarrow(H+\alpha I) \widetilde{w}=H w^* $$$$\Rightarrow \widetilde{w}=(H+\alpha I)^{-1} H w^*$$when $\alpha$ is 0, $\widetilde{w} = w^*$!
+</div>
+<p>Well I'll skip a good deal of math here to keep things simple -- if you perform the eigenvalue decomposition of $H$, you can write
+$$\widetilde{w}=(Q D Q)^T w^*$$
+where
+$$D=(\Lambda+\alpha I)^{-1} \Lambda $$
+and $\Lambda$ is the diagonal matrix of eigenvalues of $H$.</p>
+<p>Now comes the fun part!
+$$(\Lambda+\alpha I)^{-1} \Lambda=\left[\begin{array}{llll}
+\frac{\lambda_1}{\lambda_1+\alpha} &amp; &amp; &amp; \newline
+&amp; \frac{\lambda_2}{\lambda_2+\alpha} &amp; &amp; \newline
+&amp; &amp; \ddots &amp; \frac{\lambda_n}{\lambda_n+\alpha}
+\end{array}\right]
+$$</p>
+<p>This expression reduces to a scaling every coefficient of $w^*$ by some factor.
+The most important eigenvalues are those whose values are high, therefore when
+$\lambda_i &gt;&gt;\alpha$ the coefficient of that index is almost 1, retaining it fully and when
+$\lambda_i &lt;&lt;\alpha$, the parameter will vanish to 0.</p>
+<p><strong>Thus regularisation in essense preserves the important features only and does not overfit to minute details !!</strong></p>
+<h2 id="biblio"><a class="zola-anchor" href="#biblio" aria-label="Anchor link for: biblio">Biblio:</a></h2>
+<ul>
+<li>Amazing <a href="https://www.cse.iitm.ac.in/~miteshk/CS6910.html">slides</a> by <a href="https://www.cse.iitm.ac.in/~miteshk/">Prof. Mitesh Khapra</a></li>
+<li>Christopher Bishop's Book on PRML</li>
+</ul>
+<h2 id="cool-stuff-to-check-out"><a class="zola-anchor" href="#cool-stuff-to-check-out" aria-label="Anchor link for: cool-stuff-to-check-out">Cool stuff to check out</a></h2>
+<ul>
+<li>PLEASE DO - <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">3B1B deep learning playlist</a></li>
+</ul>
+
+  </div>
+</article>
+
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="socials">
+      <a href="https://github.com/123shivanshukumar">github</a><a href="https://x.com/shivan123shu">twitter</a>
+    </div>
+  </footer>
+
+  <script src="https://123shivanshukumar.github.io/js/theme.js"></script>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.querySelector('.prose') || document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '\\[', right: '\\]', display: true},
+      {left: '$', right: '$', display: false},
+      {left: '\\(', right: '\\)', display: false}
+    ],
+    ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+    throwOnError: false,
+    macros: {
+      '\\norm': '\\left\\lVert #1 \\right\\rVert',
+      '\\abs': '\\left\\lvert #1 \\right\\rvert',
+      '\\R': '\\mathbb{R}',
+      '\\E': '\\mathbb{E}'
+    }
+  });"></script>
+
+
+</body>
+</html>

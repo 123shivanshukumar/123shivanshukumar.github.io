@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Shivanshu Kumar</title>
+    <subtitle>Notes, essays and resources on math, computer science and whatever else is on my mind.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://123shivanshukumar.github.io/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://123shivanshukumar.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-06-29T00:00:00+00:00</updated>
+    <id>https://123shivanshukumar.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>A poem I wrote</title>
+        <published>2025-06-29T00:00:00+00:00</published>
+        <updated>2025-06-29T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Shivanshu Kumar
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://123shivanshukumar.github.io/posts/poem/"/>
+        <id>https://123shivanshukumar.github.io/posts/poem/</id>
+        
+        <content type="html" xml:base="https://123shivanshukumar.github.io/posts/poem/">&lt;p&gt;Literature (Hindi and Sanskrit) was one of the first that genuinely caught my eyes. While today I wonder what have I been doing with the knowledge I have -- I am not creating anything meaningful out of it. Looking back I realise -- I had done it long back, in something I was genuinely interested. This is another illustration of where imagination and creativity might take u&lt;&#x2F;p&gt;
+&lt;p&gt;Here is an excerpt of a Hindi poem I wrote when I was 13. It is one of my most favorite poems from that time -- Unfortunately I lost the book where I wrote stuff in a transfer T_T&lt;&#x2F;p&gt;
+&lt;p&gt;(If you do not understand Hindi, below is a translation)&lt;&#x2F;p&gt;
+&lt;p&gt;ये धरती है मेजबान
+करती है उस वसंत का सम्मान,
+आया था जो बनके आगंतुक
+जिसने बदल दिया प्रकृति का रुख।। (१)&lt;&#x2F;p&gt;
+&lt;p&gt;भूमि पर आए वृक्ष नए
+वृक्षों पर आई शाखाएं
+शाखाओं पर आए पत्रदल
+हर्षित हुआ परिवेश सकल ।। (२)&lt;&#x2F;p&gt;
+&lt;p&gt;ठंड से कांपते रहे जो उपवन
+सहसा हुआ उनका भी रंजन
+निद्रित कलियां हुई सचेतन
+खोलकर अपने पुष्प- सुलोचन।। (३)&lt;&#x2F;p&gt;
+&lt;p&gt;कोयल गए राग राग में
+हर उपवन हर बाग बाग में
+हरे हुए ये पीले पत्ते
+मधुकर बनाए अपने छत्ते ।। (४)&lt;&#x2F;p&gt;
+&lt;p&gt;दृष्टिगत होती केवल हरियाली
+प्रकृति ने ऐसी सौंध जो डाली
+कि डाल डाल पर बैठे खगचर
+अभिलाषित हुआ प्रभाकर ।। (५)&lt;&#x2F;p&gt;
+&lt;p&gt;खुशियों का आया रत्नाकर
+मृदुल मनोहर गात सजाकर
+करके शीत लहरों का अंत
+आया, ये मधुर वसंत ।। (६)&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;This earth is the host
+It honors that spring,
+Which came as a visitor
+And changed the course of nature.(1)&lt;&#x2F;p&gt;
+&lt;p&gt;New trees appeared on the earth
+Branches appeared on the trees
+Leafs appeared on the branches
+The entire environment became joyous.(2)&lt;&#x2F;p&gt;
+&lt;p&gt;The gardens that were shivering with cold
+Suddenly they also got entertained
+The sleeping buds became conscious
+By opening their flower- eyes.(3)&lt;&#x2F;p&gt;
+&lt;p&gt;The cuckoo sang in tune
+In every garden, every orchard
+The yellow leaves turned green
+The honeybees made their hives.(4)&lt;&#x2F;p&gt;
+&lt;p&gt;Only greenery is visible
+Nature has spread such a fragrance
+That the birds sitting on each branch
+felt desired by the Sun himself.(5)&lt;&#x2F;p&gt;
+&lt;p&gt;The gem of happiness has arrived
+Decorating the soft and beautiful body
+By ending the cold waves
+This sweet spring has arrived.(6)&lt;&#x2F;p&gt;
+&lt;p&gt;Well this might not make a lot of sense -- literature is highly sensitive to language than the literal meaning!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Mathematical insights into Regularisation</title>
+        <published>2025-06-28T00:00:00+00:00</published>
+        <updated>2025-06-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Shivanshu Kumar
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://123shivanshukumar.github.io/posts/dlmath/"/>
+        <id>https://123shivanshukumar.github.io/posts/dlmath/</id>
+        
+        <content type="html" xml:base="https://123shivanshukumar.github.io/posts/dlmath/">&lt;p&gt;This post deals with some deep mathemtical insights into why regularisation is done the way it is and how does it impact model learning, mathematically.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;some-background&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#some-background&quot; aria-label=&quot;Anchor link for: some-background&quot;&gt;Some Background&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Well Neural Networks are essentially function-approximaters - you give then a bunch of data points and the corresponding outputs and then try to predict output over an unseen data point.
+Now suppose I am trying to fit in a polynomial with coefficients as weights and a controllable degree parameter -- this is something I will try several times to see what works the best.
+Consider the two cases - $d =3$ and $d = 9$ trying to fit a sinusoid.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;..&#x2F;img1.png&quot; alt=&quot;img1&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Well for the latter the curve becomes too wigly and less generalised -- although our error is zero - by the fundamental theorem of Algebra - a polynomial of degree d would have atmost d real roots and 10 points are sufficient to describe a polynomial fully -- put another way - as long as you have $\leq$ 10 points you can &quot;fit&quot; your dataset fully!
+As we can see, this leads to generalisation problems. So there are two issues:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Excessively many parameters make the model more complicated than required and hence not smoothly generalise&lt;&#x2F;li&gt;
+&lt;li&gt;The input data is more often than not &quot;Noisy&quot; -- the outputs that you see are typically true ouput + some error $\epsilon$ i.e., driving the loss to 0 means fitting on wrong (somewhat) data!&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Thus the objective $$\min \space \mathcal{L(\theta)}$$ is not a good one! Of course looking at graphs is not feasible for large datasets and complicated functions, we need something mathematical and algorithmic - Regularisation solves this problem :&lt;&#x2F;p&gt;
+&lt;p&gt;We try to minimise $\mathcal{L(\theta)} + \Omega(\theta)$ where $\Omega(\theta)$ somehow penalises the model complexity&lt;&#x2F;p&gt;
+&lt;p&gt;Often we have seen people using $L_2$ regularisation or weight decay (well in practise this means the coefficient $\alpha$ of the regulariser)
+$$\min \mathcal \space {L(\theta)} + \frac{\alpha}{2} \norm{w}^2 $$&lt;&#x2F;p&gt;
+&lt;p&gt;But where does this come from ? An intuitive explanation is that this penalises the excessive complexity these parameters might incur by taking large values -- I know right, not satisfactory!&lt;&#x2F;p&gt;
+&lt;p&gt;A bit of detour:&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-bayesian-paradigm&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#the-bayesian-paradigm&quot; aria-label=&quot;Anchor link for: the-bayesian-paradigm&quot;&gt;The Bayesian Paradigm:&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This is one school of thinking in statistics and learning theory. This views selecting parameters for a distribution as maximising probability : we already have some prior idea of what those parameters (called weights in our case) should look like and the additional information received by the sample data helps us refine our understanding. Lets do this concretely -&lt;&#x2F;p&gt;
+&lt;p&gt;Assume that the weights in our model have a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Normal_distribution&quot;&gt;Gaussian&lt;&#x2F;a&gt; prior distribution with zero mean. For now assuming there is only one weight:
+$$p(w;\sigma) = \mathcal{N}(w|0, \sigma^2)$$&lt;&#x2F;p&gt;
+&lt;p&gt;To measure proximity of the chosen parameters to reality we use the technique
+of maximum likelihood estimation -- multiply the probabilities of all the data points with parameters (here weights) as variables and then optimize this product by differentiating and setting it to zero, and using the corresponding parameters as optimal -- in essense this gives us the parameters that are most likely for a model&lt;&#x2F;p&gt;
+&lt;p&gt;For concreteness - suppose we observe a dataset $t = {x_1, x_2 ... x_n}$ Say after seeing the data my posterior distribution is $p&#x27;(w,t)$ -- this means what is my &quot;posterior&quot; view of how likely a particular weight could be AFTER seeing the data&lt;&#x2F;p&gt;
+&lt;p&gt;To summarise - the prior distribution is my initial worldview on what weights are the most highly likely to be, without seeing any data. Now this view changes as I see some data. Mathematically this would mean:
+$$p(w,t) = p(t|w)*p(w)$$
+Now what is $p(t|w)$? -- How likely are these data points ($(x,y)$ pairs )given a parameter $w$. A bunch of independently drawn points means -- multiply !
+Thus $$p(t|w) = \prod_{i=1}^{n} p(x_i,y_i|w)$$&lt;&#x2F;p&gt;
+&lt;p&gt;Now maximising $p(w,t)$ gives us the likelihood of how well a particular $w$ would go with the data points in hand and our problem reduces to
+$$\max p(w)\times \prod_{i=1}^{n} p(x_i|w)$$&lt;&#x2F;p&gt;
+&lt;p&gt;We now $p(w)$. Lets also try to solve problem 2 of the two mentioned above, and include the error term,
+say the observed datapoint $y_i = f(x_i,w) + \epsilon$ for some true source function $f$ and the error is gaussian with zero mean and variance = $\beta (&amp;gt;0)$ i.e., $\epsilon \sim \mathcal{N}(\epsilon|0,\beta)$
+It is easy to see that this is essentially
+$$y_i \sim \mathcal{N}(y_|f(x_i,w),\beta)$$ Essentially, the actual value is the observed value, with some small possible error around it&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;..&#x2F;img2.png&quot; alt=&quot;img2&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;$$\Rightarrow p(x_i,y_i|w) = \frac{1}{\sqrt{2\pi\beta}} e^{-(y_i - f(x_i,w))^2&#x2F;2\beta}$$
+This looks ugly -- I know right, standard trick -- take logartihm both sides!&lt;&#x2F;p&gt;
+&lt;p&gt;since log is monotonically increasing -- it does not affect the objective and hence our problem is further reduced to&lt;&#x2F;p&gt;
+&lt;p&gt;$$\max_{w} \sum_{i=1}^{n}\log(p(x_i,y_i; w)) + \log(p(w))$$&lt;&#x2F;p&gt;
+&lt;p&gt;$$=\max_{w} -(\sum_{i=1}^{n}\frac{1}2{\log(2\pi\beta)}+\frac{(y_i - f(x_i,w))^2}{2\beta}) - \frac{1}2{\log(2\pi\sigma^2)}-\frac{w^2}{\sigma^2}$$
+Well assuming $\sigma$ and $\beta$ are constant,
+$$=\min_{w} (\sum_{i=1}^{n}\frac{(y_i - f(x_i,w))^2}{2\beta}) + \frac{w^2}{\sigma^2}$$
+Hold on ......... DOES THIS SEEM FAMILIAR ???? HOLY YEAHH&lt;&#x2F;p&gt;
+&lt;p&gt;this is literally Mean Squared loss + $l_2$ regularisation !!!&lt;&#x2F;p&gt;
+&lt;p&gt;Finally, to include more weights we just need to think of weight as a vector in a mutlivariate sense.&lt;&#x2F;p&gt;
+&lt;p&gt;How would the gaussian look like ? The mean as you would guess is a vector $\boldsymbol{\mu}$. Now since there are many variables -- we would like to measure the sensitivity of movement of a variable when we tweak one variable slightly -- well this is what the variance captures in the univariate sense.
+Hence instead of a number we have an $n\times n $ matrix known as the covariance matrix -- how much are two variables $x_i$ and $x_j$ related to each other ?
+Thus $$p(\mathbf{w}) = \frac{1}{(2\pi)^{d&#x2F;2}|\boldsymbol{\Sigma}|^{1&#x2F;2}} \exp\left(-\frac{1}{2}(\mathbf{w} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\mathbf{w} - \boldsymbol{\mu})\right)$$&lt;&#x2F;p&gt;
+&lt;p&gt;Notice the similarity -- if $\mathbf{w}$ has just one variable, this reduces to our original expression.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A note on quadratic vector expressions: an expression of the form $\sum\sum w_{ij} x_i x_j$ can be typically written in this format -- $x^TWx$ -- the ij element representing the term $x_ix_j$.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Now setting $\boldsymbol{\mu = 0}$, and setting $\boldsymbol{\Sigma} = \sigma^2I$, for simplicity (for getting a feel for how gaussians change with the choice of $\boldsymbol{\Sigma}$ check &lt;a href=&quot;https:&#x2F;&#x2F;fabiandablander.com&#x2F;statistics&#x2F;Two-Properties.html&quot;&gt;this post&lt;&#x2F;a&gt;. Below is an image from there))&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;..&#x2F;img3.png&quot; alt=&quot;img3&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The expression becomes similar to the above,
+$$=\min_{w} (\sum_{i=1}^{n}\frac{(y_i - f(x_i,w))^2}{2\beta}) +\left(\frac{1}{2}\mathbf{w}^T \mathbf{w} \right)$$&lt;&#x2F;p&gt;
+&lt;p&gt;Observe that $\mathbf{w}^T \mathbf{w} $ is indeed the $l_2$ norm.&lt;&#x2F;p&gt;
+&lt;p&gt;By the way ...&lt;&#x2F;p&gt;
+&lt;p&gt;Q : How is Bayesian Learning related to overfitting though?&lt;&#x2F;p&gt;
+&lt;p&gt;A: Well it allows the model to not rely too much on the data it has seen -- it has some extra &quot;plausibility&quot; information. Recall the sine curve - the Gaussian prior assumption &quot;informs&quot; the model of what would make more sense.&lt;&#x2F;p&gt;
+&lt;p&gt;Q: Sure, why only a Gaussian prior ?&lt;&#x2F;p&gt;
+&lt;p&gt;A:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;according to the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Central_limit_theorem&quot;&gt;central limit theorem&lt;&#x2F;a&gt; the sum of a large number of independent distributions converge to a gaussian - this takes into account the large number of random factors and makes it a reasonable choice to being with. A lot of distributions in the nature in fact turn out to be Gaussian.&lt;&#x2F;li&gt;
+&lt;li&gt;According to information theory, among all continuous distributions with a given mean and variance, Gaussian has maximum entropy, making it the &quot;least informative&quot; -- yep u heard me right -- this has lesser information than random uniform! (more on this in another post)&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;geometric-insights&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#geometric-insights&quot; aria-label=&quot;Anchor link for: geometric-insights&quot;&gt;Geometric insights&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;(since our params are w, not writing theta)
+Our objective is
+$$
+\widetilde{\mathcal{L}}(w)=\mathcal{L}(w)+\frac{\alpha}{2}|w|^2
+$$
+Taking gradients both sides, (note that w is a vector WLOG)
+$$\nabla \widetilde{\mathcal{L}}(w)=\nabla \mathcal{L}(w)+\alpha w$$&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To see why $\nabla(\norm{w}^2) = 2w$, expand $\norm{w}^2 = \sum w_i^2$, now taking the derivative with respect to the $i$th component, gives $2w_i$ hence the gradient vector is $2w$&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Now consider the multivariate Taylor&#x27;s approximation of the train error function upto the second order,&lt;&#x2F;p&gt;
+&lt;div&gt;
+$$\mathcal{L}\left(w^*+u\right)=\mathcal{L}\left(w^*\right)+u^T \nabla \mathcal{L}\left(w^*\right)+\frac{1}{2} u^T H u$$
+&lt;&#x2F;div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Observe the similarity with the univariate case, $u^T \nabla \mathcal{L}\left(w^*\right)$ is the linear and $\frac{1}{2} u^T H u $ is the quadratic term. $H$ is the Hessian matrix and is some sort of a &quot;multivariate double derivative&quot; -- the i,j term tells how much the partial derivate wrt ith variable changes when you move a little bit in the jth variable -- and hence the matrix&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;div&gt;
+Now say $w*$ is the optimal solution to $\mathcal{L}(w)$, $\nabla \mathcal{L}(w^*) = 0$, thus we have,$$\mathcal{L}(w)=\mathcal{L}\left(w^*\right)+\left(w-w^*\right)^T \nabla \mathcal{L}\left(w^*\right)+\frac{1}{2}\left(w-w^*\right)^T H\left(w-w^*\right) $$$$=\mathcal{L}\left(w^*\right)+\frac{1}{2}\left(w-w^*\right)^T H\left(w-w^*\right)$$$$\nabla \mathcal{L}(w)=\nabla \mathcal{L}\left(w^*\right)+H\left(w-w^*\right) $$ $$=H\left(w-w^*\right) $$Now going back to the gradient of regularised loss,$$\quad \nabla \widetilde{\mathcal{L}}(w)=\nabla \mathcal{L}(w)+\alpha w = H\left(w-w^*\right) + \alpha w$$If $\widetilde{w}$ is the optimal solution to $\widetilde{\mathcal{L}}(w)$$$\nabla \widetilde{\mathcal{L}}(\widetilde{w})=0 $$$$\Rightarrow H\left(\widetilde{w}-w^*\right)+\alpha \widetilde{w}=0 $$$$\Rightarrow(H+\alpha I) \widetilde{w}=H w^* $$$$\Rightarrow \widetilde{w}=(H+\alpha I)^{-1} H w^*$$when $\alpha$ is 0, $\widetilde{w} = w^*$!
+&lt;&#x2F;div&gt;
+&lt;p&gt;Well I&#x27;ll skip a good deal of math here to keep things simple -- if you perform the eigenvalue decomposition of $H$, you can write
+$$\widetilde{w}=(Q D Q)^T w^*$$
+where
+$$D=(\Lambda+\alpha I)^{-1} \Lambda $$
+and $\Lambda$ is the diagonal matrix of eigenvalues of $H$.&lt;&#x2F;p&gt;
+&lt;p&gt;Now comes the fun part!
+$$(\Lambda+\alpha I)^{-1} \Lambda=\left[\begin{array}{llll}
+\frac{\lambda_1}{\lambda_1+\alpha} &amp;amp; &amp;amp; &amp;amp; \newline
+&amp;amp; \frac{\lambda_2}{\lambda_2+\alpha} &amp;amp; &amp;amp; \newline
+&amp;amp; &amp;amp; \ddots &amp;amp; \frac{\lambda_n}{\lambda_n+\alpha}
+\end{array}\right]
+$$&lt;&#x2F;p&gt;
+&lt;p&gt;This expression reduces to a scaling every coefficient of $w^*$ by some factor.
+The most important eigenvalues are those whose values are high, therefore when
+$\lambda_i &amp;gt;&amp;gt;\alpha$ the coefficient of that index is almost 1, retaining it fully and when
+$\lambda_i &amp;lt;&amp;lt;\alpha$, the parameter will vanish to 0.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Thus regularisation in essense preserves the important features only and does not overfit to minute details !!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;biblio&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#biblio&quot; aria-label=&quot;Anchor link for: biblio&quot;&gt;Biblio:&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Amazing &lt;a href=&quot;https:&#x2F;&#x2F;www.cse.iitm.ac.in&#x2F;~miteshk&#x2F;CS6910.html&quot;&gt;slides&lt;&#x2F;a&gt; by &lt;a href=&quot;https:&#x2F;&#x2F;www.cse.iitm.ac.in&#x2F;~miteshk&#x2F;&quot;&gt;Prof. Mitesh Khapra&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Christopher Bishop&#x27;s Book on PRML&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;cool-stuff-to-check-out&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#cool-stuff-to-check-out&quot; aria-label=&quot;Anchor link for: cool-stuff-to-check-out&quot;&gt;Cool stuff to check out&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;PLEASE DO - &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&quot;&gt;3B1B deep learning playlist&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Some math I self learned</title>
+        <published>2025-06-22T00:00:00+00:00</published>
+        <updated>2025-06-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Shivanshu Kumar
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://123shivanshukumar.github.io/posts/math/"/>
+        <id>https://123shivanshukumar.github.io/posts/math/</id>
+        
+        <content type="html" xml:base="https://123shivanshukumar.github.io/posts/math/">&lt;p&gt;The minute I stepped into college I started self learning a lot of math -- Below are some of things I studied. Some methods I tried and some other excellent resources I think people should look into. See what works for you or lemme know what worked for you and you want to add in :))&lt;&#x2F;p&gt;
+&lt;p&gt;As Terence Tao says, everyone has there own unique strong point of translating mathematical information into neural signals, the approaches might vary. But one thing is certain - Math is learnt actively (write and solve) and iteratively -- it never the particular problem but the abstract idea that, is signalled through the problem is more important.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;1-real-analysis&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#1-real-analysis&quot; aria-label=&quot;Anchor link for: 1-real-analysis&quot;&gt;1 Real Analysis&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Yep u heard me right :P. The first thing I did was RA. &lt;a href=&quot;https:&#x2F;&#x2F;ocw.mit.edu&#x2F;courses&#x2F;18-100a-real-analysis-fall-2020&#x2F;&quot;&gt;Here&lt;&#x2F;a&gt; is an excellent course by MIT OCW. Although this is introductory, it gave me very strong foundations on proof writing. I did nothing much saw the videos and did the assignment as if I was taking the course myself. Understanding theorems can get challenging at times but I think RA serves as :&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;A good intro to pure math&lt;&#x2F;li&gt;
+&lt;li&gt;Theorems of sequences and series are used in applied continuous math -- a lot in Electrical Engg!&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;2-linear-algebra&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#2-linear-algebra&quot; aria-label=&quot;Anchor link for: 2-linear-algebra&quot;&gt;2 Linear Algebra&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This is something that I m still studying and will keep studying :))
+The more u delve into the more u find. &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&quot;&gt;3B1B Essense of linal&lt;&#x2F;a&gt; Playlist is a MUST !!&lt;&#x2F;p&gt;
+&lt;p&gt;There are two sides on Linear Algebra:&lt;&#x2F;p&gt;
+&lt;p&gt;(a) Abstract Linear Algebra -- the study of a special type of objects in math known as vector spaces with more emphasis on algebraic properties of vector spaces in general. Artin is an excellent book for this! But this is better studied after studying Abstract Algebra
+(b) Applied Linal - The Gilbert Strang Linal - yupp u read it right -- infact the best way to study wud be to pick up Gilbert&#x27;s book and go thru his course! I studied this from random sources and was never structured -- more like I picked bits on the way&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;3-discrete-math&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#3-discrete-math&quot; aria-label=&quot;Anchor link for: 3-discrete-math&quot;&gt;3 Discrete Math&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Unlike the Standard Rosen path I learnt DM in tid bits -- cardinality and number systems from Real Analysis.
+Did not study a lot of combinatorics and for the remaining Prof S Akshay has some cool &lt;a href=&quot;https:&#x2F;&#x2F;www.cse.iitb.ac.in&#x2F;~akshayss&#x2F;courses&#x2F;cs105-2024&#x2F;cs105-2024.html&quot;&gt;slides&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;4-abstract-algebra&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#4-abstract-algebra&quot; aria-label=&quot;Anchor link for: 4-abstract-algebra&quot;&gt;4 Abstract Algebra&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;One of the most beautiful things I have ever seen in my life -- Everyone should give a shot to learning how algebraic sturctures with the most primitive properties give rise to the strongest cryptographic protocols. Nevertheless, the subject is just cute in its own right!&lt;&#x2F;p&gt;
+&lt;p&gt;Hard Way: I N Herstein : Caution for those of you who&#x27;ve solved Irodov&#x27;s physics problems. This is the algebra version!!
+The Simpler but still elegant way : Contemporary Abstract Algebra by Joseph Gallian&lt;&#x2F;p&gt;
+&lt;p&gt;I enjoyed it so much that I took a course even after learning it :P&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;5-probability-theory&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#5-probability-theory&quot; aria-label=&quot;Anchor link for: 5-probability-theory&quot;&gt;5 Probability Theory&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Not talking about poker puzzles or market strategies (sorry quant folks) -- the theory of setting up probabilities as a notion of the chances of something happening -- modelling and doing the math from scratch&lt;&#x2F;p&gt;
+&lt;p&gt;Berstekas and Tsikilis is a very beautiful and elegant book -- doing its problems not only widened my understanding of probab but imporved my math! Worth spending time because they force you to apply other areas of math :)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;6-graph-theory&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#6-graph-theory&quot; aria-label=&quot;Anchor link for: 6-graph-theory&quot;&gt;6 Graph Theory&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;One of the &lt;strong&gt;hardest&lt;&#x2F;strong&gt; courses I had at college -- self learned through Bondy and Murthy though I dont think it is too hard for an introductory course and focuses less on the abstract ideas. Very proof oriented -- a lot of ideas are elegant but I did not find it particularly beautiful - not a combinatorics person :|.
+For those using BM, this solution manual I wrote might help.
+Doughlas B West is also good imo&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;7-tensor-analysis&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#7-tensor-analysis&quot; aria-label=&quot;Anchor link for: 7-tensor-analysis&quot;&gt;7 Tensor Analysis&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Something non trivial -- not many people talk about this -- I was just fascinated how would matrices would look in higher dimensions. Studied from Chapter 10 of Mathematical Methods in Physical Sciences by Mary Boas. Dealt with standard tensors in Physics + Coordinate transformations in Cartesian and non Cartesian Systems.&lt;&#x2F;p&gt;
+&lt;p&gt;There is a bunch of other stuff I tried learning but failed -- topology (Munkres v good, 3B1B must), functinonal Analysis (tried 3 times died after 2 lectures), Statistics (kept finding the right book), Convex Optimisation (Tried Numerical Optimisation by Nocedal and Wright -- helped me thru matrix calculus tho),&lt;&#x2F;p&gt;
+&lt;p&gt;Cool channels for learning:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;@brightsideofmaths&quot;&gt;The Bright Side of Mathematics&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;@the_hidden_library&quot;&gt;The Hidden Library of Mathematics&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Cool channels for intuition:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;c&#x2F;3blue1brown&quot;&gt;3B1B&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;numberphile&quot;&gt;Numberphile&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;venhance.github.io&#x2F;napkin&#x2F;Napkin.pdf&quot;&gt;An Infinitely Large Napkin&lt;&#x2F;a&gt; book by Evan Chan contains a lot of pieces connected together + provides intuitive insights into abstract concepts&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero Knowledge Proofs</title>
+        <published>2025-05-20T00:00:00+00:00</published>
+        <updated>2025-05-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Shivanshu Kumar
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://123shivanshukumar.github.io/posts/zkps/"/>
+        <id>https://123shivanshukumar.github.io/posts/zkps/</id>
+        
+        <content type="html" xml:base="https://123shivanshukumar.github.io/posts/zkps/">&lt;p&gt;Zero Knowledge Proofs : wait what ? The name sounds absurd isnt it? It didnt to me somehow lol.&lt;&#x2F;p&gt;
+&lt;p&gt;Let us first build our basics on secret sharing : Suppose Alice and Bob want decide to date each other, they send a bit (0&#x2F;1) indicating whether or not each wants to date. This problem can be simply modelled as taking the AND of two bits (Obviously, both have to agree!) Note that Bob is scared of rejection and does not want to be embarrased if his response was a 1 but Alice&#x27;s was 0 ... Suppose Alice and Bob simply send their bits to a trusted Charlie (and not revealing it to each other) who does the AND and sends the result to both. In the sad case where Alice does send a 0, there is no way for her to determine whether Bob sent a 0 or a 1 since the answer in both cases is the same.
+This forms the basis of &#x27;indistinguishability&#x27; in cryptography.&lt;&#x2F;p&gt;
+&lt;p&gt;Now coming to proofs. Suppose you owe me some money, and pay me back by transferring back to my account. I ask you for a proof or a justification for your transaction. One simple way would be that you show me your previous account balance, the transaction receipt issued, and the current account balance, to make sure all is in place. But you dont like it. I can &lt;strong&gt;see&lt;&#x2F;strong&gt; your huge bank balance and deny you lending money the next time :|.&lt;&#x2F;p&gt;
+&lt;p&gt;So you want to prove to me that you correctly paid me the money I deserved without showing any of the sensitive details like bank account etc. This is precisely what a zero knowledge proof does.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;More formally,
+a zero knowledge proof is a proof to a statement &quot;$\exists w $ such that for given input $x$ and a circuit $C$, $C(x,w) = 0$&quot;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Moreover the &quot;verifier&quot; of the proof should not be able to &lt;em&gt;distinguish&lt;&#x2F;em&gt; between two candidate $w_1$ and $w_2$ that satisfy the above definition.
+&lt;br &#x2F;&gt;
+&lt;br &#x2F;&gt;
+&lt;br &#x2F;&gt;
+&lt;em&gt;Wait wait wait, what from dating and banking to circuits ??? Have patience buddy, we ll get there slowly...&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;A serious extension to the above example is transactions on a blockchain. All transactions should be publicly verifiable, but none should reveal personal details of the user. For those new to blockchains, think about a network of nodes interconnected, each having some assets that is transferrable across nodes and the amount of money in the blockchain is fixed. Money is neither created nor destroyed. Simple, just like another economy.
+What is the difference, I do not have to go to a central agency to mediate transactions, everyone peer can transact with another peer, without restriction.&lt;&#x2F;p&gt;
+&lt;p&gt;What this provides is excellent fault tolerance, in traditional (aka centralized) banking, there is single point failure. The bank gone $\Rightarrow$ all the people associated are gone with it too! But in a decentralized economy like blockchains, this is not the case.
+All sounds good ? The real problem starts now. Since there is no central controlling agency, I can make FALSE transactions and overspend - &#x27;make money&#x27; out of thin air!&lt;&#x2F;p&gt;
+&lt;p&gt;A trivial solution to that would be show all your transactions to everyone and make your account public. But this has two serious problems :&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Breach of privacy - cant show account details publicly&lt;&#x2F;li&gt;
+&lt;li&gt;Network delays - since nodes are connected with different connection bandwidths, for any two nodes to settle on a transaction they have to wait for the farthest node to see the message of a transaction -- too slow -- NO!&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Now comes our ZKP hero:&lt;&#x2F;p&gt;
+&lt;p&gt;A fix for the first is to set up a zero knowledge proof for a statement that &quot;the given transaction from Node A to Node B is valid&quot;, let us not get into the details of valid is, but I hope that the above makes sense. So this ensures validity of a payment while maintaining privacy - best of both worlds.&lt;&#x2F;p&gt;
+&lt;p&gt;A fix for (2) is achieved through a high level transformation called a &lt;strong&gt;Fiat-Shamir transformation&lt;&#x2F;strong&gt; on the proof which renders it non interactive. What this means is that before inorder to prove the correctness of the transaction I would have to interact with every other node, &quot;talk&quot; to them and convince them that &quot;Hey, the transfer is sound, here is a proof!&quot;. But by using the FST, this conversation can, be simplified into a bunch of statements that a verifer (someone who is not involved in the transaction lets say) can sit down and verify whenever it reaches him. The latter is called an &quot;argument&quot; as opposed to a proof.&lt;&#x2F;p&gt;
+&lt;p&gt;This is a neat and easy way to figure this out ! But how exactly does this happen ? How does a Zero Knowledge Proof look like? Well mind you, there is some gameplay of words here, all this is based on cryptographic assumptions and correctness with some probability -- more on these details in a later post!&lt;&#x2F;p&gt;
+&lt;p&gt;Thanks for reading.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;bibliography&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#bibliography&quot; aria-label=&quot;Anchor link for: bibliography&quot;&gt;Bibliography&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;people.cs.georgetown.edu&#x2F;jthaler&#x2F;ProofsArgsAndZK.pdf&quot;&gt;Proofs Arguments and Zero Knowledge&lt;&#x2F;a&gt; by &lt;a href=&quot;https:&#x2F;&#x2F;people.cs.georgetown.edu&#x2F;jthaler&#x2F;&quot;&gt;Justin Thaler&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rdi.berkeley.edu&#x2F;zk-learning&#x2F;&quot;&gt;ZKP MOOC&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>
